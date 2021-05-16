@@ -1,0 +1,461 @@
+***************************Initial Routing Table***************************
+For A 
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               2147483647     --
+ D               2147483647     --
+ E               1               E
+
+For B
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               1               C
+ D               2147483647     --
+ E               2147483647     --
+
+For C
+Destination      Distance        Next Hop
+A                2147483647     --
+ B               1               B
+ C               0               C
+ D               1               D
+ E               2147483647     --
+
+For D
+Destination      Distance        Next Hop
+A                2147483647     --
+ B               2147483647     --
+ C               1               C
+ D               0               D
+ E               1               E
+
+For E
+Destination      Distance        Next Hop
+A                1               A
+ B               2147483647     --
+ C               2147483647     --
+ D               1               D
+ E               0               E
+
+***************************Round 1 of update***************************
+Sharing distance vector of A with B
+Updated routing table of B upon receiving information from A is : 
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               1               C
+ D               2147483647     --
+ E               2               A
+
+Sharing distance vector of A with E
+Updated routing table of E upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2147483647     --
+ D               1               D
+ E               0               E
+
+Sharing distance vector of B with A
+Updated routing table of A upon receiving information from B is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               2               B
+ D               2147483647     --
+ E               1               E
+
+Sharing distance vector of B with C
+Updated routing table of C upon receiving information from B is :
+Destination      Distance        Next Hop
+A                2               B
+ B               1               B
+ C               0               C
+ D               1               D
+ E               3               B
+
+Sharing distance vector of C with B
+Updated routing table of B upon receiving information from C is :
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               1               C
+ D               2               C
+ E               2               A
+
+Sharing distance vector of C with D
+Updated routing table of D upon receiving information from C is :
+Destination      Distance        Next Hop
+A                3               C
+ B               2               C
+ C               1               C
+ D               0               D
+ E               1               E
+
+Sharing distance vector of D with C
+Updated routing table of C upon receiving information from D is :
+Destination      Distance        Next Hop
+A                2               B
+ B               1               B
+ C               0               C
+ D               1               D
+ E               2               D
+
+Sharing distance vector of D with E
+Updated routing table of E upon receiving information from D is : 
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of E with A
+Updated routing table of A upon receiving information from E is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               2               B
+ D               2               E
+ E               1               E
+
+Sharing distance vector of E with D
+Updated routing table of D upon receiving information from E is :
+Destination      Distance        Next Hop
+A                2               E
+ B               2               C
+ C               1               C
+ D               0               D
+ E               1               E
+
+***************************Round 2 of update***************************
+Sharing distance vector of A with B
+No update happened in the routing table of B upon receiving information from A.
+Sharing distance vector of A with E
+No update happened in the routing table of E upon receiving information from A.
+Sharing distance vector of B with A
+No update happened in the routing table of A upon receiving information from B.
+Sharing distance vector of B with C
+No update happened in the routing table of C upon receiving information from B.
+Sharing distance vector of C with B
+No update happened in the routing table of B upon receiving information from C.
+Sharing distance vector of C with D
+No update happened in the routing table of D upon receiving information from C.
+Sharing distance vector of D with C
+No update happened in the routing table of C upon receiving information from D.
+Sharing distance vector of D with E
+No update happened in the routing table of E upon receiving information from D.
+Sharing distance vector of E with A
+No update happened in the routing table of A upon receiving information from E.
+Sharing distance vector of E with D
+No update happened in the routing table of D upon receiving information from E.
+
+As no change happened in routing table in round 2. Hence, After 1 rounds of update, every node can reach every other node in the network.
+
+***************************Final Updated Routing Table***************************
+For A
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               2               B
+ D               2               E
+ E               1               E
+
+For B 
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               1               C
+ D               2               C
+ E               2               A
+
+For C
+Destination      Distance        Next Hop
+A                2               B
+ B               1               B
+ C               0               C
+ D               1               D
+ E               2               D
+
+For D
+Destination      Distance        Next Hop
+A                2               E
+ B               2               C
+ C               1               C
+ D               0               D
+ E               1               E
+
+For E
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+
+***************************Link BC breaks at t = 2***************************
+***************************Round 4 of update***************************
+Sharing distance vector of A with B
+Updated routing table of B upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               2147483647              C
+ D               3               A
+ E               2               A
+
+Sharing distance vector of A with E
+Updated routing table of E upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of B with A
+Updated routing table of A upon receiving information from B is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               2147483647              B
+ D               2               E
+ E               1               E
+
+Sharing distance vector of C with D
+Updated routing table of D upon receiving information from C is :
+Destination      Distance        Next Hop
+A                2               E
+ B               2147483647              C
+ C               1               C
+ D               0               D
+ E               1               E
+
+Sharing distance vector of D with C
+Updated routing table of C upon receiving information from D is :
+Destination      Distance        Next Hop
+A                3               D
+ B               2147483647              B
+ C               0               C
+ D               1               D
+ E               2               D
+
+Sharing distance vector of D with E
+Updated routing table of E upon receiving information from D is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of E with A
+Updated routing table of A upon receiving information from E is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+Sharing distance vector of E with D
+Updated routing table of D upon receiving information from E is :
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+***************************Round 5 of update***************************
+Sharing distance vector of A with B
+Updated routing table of B upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               4               A
+ D               3               A
+ E               2               A
+
+Sharing distance vector of A with E
+Updated routing table of E upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of B with A
+Updated routing table of A upon receiving information from B is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+Sharing distance vector of C with D
+Updated routing table of D upon receiving information from C is :
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+Sharing distance vector of D with C
+Updated routing table of C upon receiving information from D is :
+Destination      Distance        Next Hop
+A                3               D
+ B               4               D
+ C               0               C
+ D               1               D
+ E               2               D
+
+Sharing distance vector of D with E
+Updated routing table of E upon receiving information from D is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of E with A
+Updated routing table of A upon receiving information from E is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+Sharing distance vector of E with D
+Updated routing table of D upon receiving information from E is :
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+***************************Round 6 of update***************************
+Sharing distance vector of A with B
+Updated routing table of B upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               4               A
+ D               3               A
+ E               2               A
+
+Sharing distance vector of A with E
+Updated routing table of E upon receiving information from A is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of B with A
+Updated routing table of A upon receiving information from B is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+Sharing distance vector of C with D
+Updated routing table of D upon receiving information from C is :
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+Sharing distance vector of D with C
+Updated routing table of C upon receiving information from D is :
+Destination      Distance        Next Hop
+A                3               D
+ B               4               D
+ C               0               C
+ D               1               D
+ E               2               D
+
+Sharing distance vector of D with E
+Updated routing table of E upon receiving information from D is :
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
+
+Sharing distance vector of E with A
+Updated routing table of A upon receiving information from E is :
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+Sharing distance vector of E with D
+Updated routing table of D upon receiving information from E is :
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+
+As no change happened in routing table in round 6. Hence, After 5 rounds of update, every node can reach every other node in the network.
+
+***************************Final Updated Routing Table When Link BC Breaks***************************
+For A
+Destination      Distance        Next Hop
+A                0               A
+ B               1               B
+ C               3               E
+ D               2               E
+ E               1               E
+
+For B
+Destination      Distance        Next Hop
+A                1               A
+ B               0               B
+ C               4               A
+ D               3               A
+ E               2               A
+
+For C
+Destination      Distance        Next Hop
+A                3               D
+ B               4               D
+ C               0               C
+ D               1               D
+ E               2               D
+
+For D
+Destination      Distance        Next Hop
+A                2               E
+ B               3               E
+ C               1               C
+ D               0               D
+ E               1               E
+
+For E
+Destination      Distance        Next Hop
+A                1               A
+ B               2               A
+ C               2               D
+ D               1               D
+ E               0               E
